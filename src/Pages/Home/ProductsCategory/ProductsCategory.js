@@ -23,8 +23,8 @@ const ProductsCategory = () => {
 //    }
     return (
         <div className="lg:container lg:px-32">
-            <h2 className="text-center text-3xl font-semibold mb-5">Products category</h2>
-            <div className="grid lg:grid-cols-3 grid-cols-1">
+            <h2 className="text-center text-3xl font-semibold my-5">Products category</h2>
+            <div className="grid lg:grid-cols-3 grid-cols-1 my-10">
                 {
                     categories.map(category => <CategoryCards
                     key={category._id}

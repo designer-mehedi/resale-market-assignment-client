@@ -19,6 +19,7 @@ const Products = () => {
 				product={product}
 				handleShowItem={handleShowItem}
 				items={items}
+				setItems={setItems}
 				></ProductCard>)
 			}
 		</div>

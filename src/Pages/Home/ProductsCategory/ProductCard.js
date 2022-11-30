@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
+import toast from "react-hot-toast";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
 
-const ProductCard = ({ product, items, handleShowItem }) => {
+const ProductCard = ({ product, items, handleShowItem, setItems }) => {
 	const { _id, productName, image, location, resalePrice, originalPrice } =
 		product;
 		const {user} = useContext(AuthContext);
@@ -37,9 +38,16 @@ const ProductCard = ({ product, items, handleShowItem }) => {
 			})
 			.then(res => res.json())
 			.then(data => {
-				console.log(data);
+				if(data.acknowledged) {
+					toast.success("Booking Confirmed")
+				}
+				else{
+					toast.error(data.message);
+				}
 			})
 			.catch(err => console.log(err));
+
+			form.reset();
 		}
 		
 	return (
