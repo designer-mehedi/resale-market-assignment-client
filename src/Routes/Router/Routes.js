@@ -1,7 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
+import DashboardLayout from "../../Layout/DashboardLayout";
 import LoginLayout from "../../Layout/LoginLayout";
 import Main from "../../Layout/Main";
 import About from "../../Pages/About/About";
+import MyBookings from "../../Pages/Dashboard/MyBookings/MyBookings";
 import Home from "../../Pages/Home/Home/Home";
 import Products from "../../Pages/Home/ProductsCategory/Products";
 import Login from "../../Pages/Login/Login";
@@ -26,7 +28,7 @@ export const router = createBrowserRouter([
 				element: <Products />,
 				loader: ({ params }) =>
 					fetch(
-						`https://resale-products-server-taupe.vercel.app/category/${params.id}`
+						`https://resale-products-server-drab.vercel.app/category/${params.id}`
 					),
 			},
 		],
@@ -42,6 +44,16 @@ export const router = createBrowserRouter([
 			{
 				path: "/register",
 				element: <Register />,
+			},
+		],
+	},
+	{
+		path: "/dashboard",
+		element: <DashboardLayout />,
+		children: [
+			{
+				path: "/dashboard",
+				element: <MyBookings />,
 			},
 		],
 	},

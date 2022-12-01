@@ -26,33 +26,33 @@ const ProductCard = ({ product, items, handleShowItem, setItems }) => {
 				product,
 				price,
 				phone,
-				location
+				location,
+				image
 			}
 
-			fetch("http://localhost:5000/bookings", {
+			fetch("https://resale-products-server-drab.vercel.app/bookings", {
 				method: "POST",
 				headers: {
-					"content-type" : "application/json"
+					"content-type": "application/json",
 				},
-				body: JSON.stringify(booking)
+				body: JSON.stringify(booking),
 			})
-			.then(res => res.json())
-			.then(data => {
-				if(data.acknowledged) {
-					toast.success("Booking Confirmed")
-				}
-				else{
-					toast.error(data.message);
-				}
-			})
-			.catch(err => console.log(err));
+				.then((res) => res.json())
+				.then((data) => {
+					if (data.acknowledged) {
+						toast.success("Booking Confirmed");
+					} else {
+						toast.error(data.message);
+					}
+				})
+				.catch((err) => console.log(err));
 
 			form.reset();
 		}
 		
 	return (
 		<div>
-			<div className="card w-96 bg-base-100 shadow-xl">
+			<div className="card bg-base-100 shadow-xl">
 				<figure>
 					<img src={image} alt="Shoes" />
 				</figure>

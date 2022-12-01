@@ -7,12 +7,12 @@ const AboutUs = () => {
 				<div className="lg:w-1/2">
 					<img
 						src="https://bestfulfill.com/wp-content/uploads/2022/08/sourcing-wholesale-products-for-resale.jpg"
-						className="w-[550px] h-[400px] rounded-lg shadow-2xl"
+						className="lg:w-[550px] lg:h-[400px] rounded-lg shadow-2xl"
 						alt=""
 					/>
 				</div>
 				<div className="lg:w-1/2">
-					<h1 className="text-5xl font-bold">We are dedicated at your Service</h1>
+					<h1 className="lg:text-5xl text-2xl font-bold">We are dedicated at your Service</h1>
 					<p className="py-6">
 						Provident cupiditate voluptatem et in. Quaerat fugiat ut
 						assumenda excepturi exercitationem quasi. In deleniti

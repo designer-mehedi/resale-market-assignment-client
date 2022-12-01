@@ -12,7 +12,7 @@ const Products = () => {
 	};
 
 	return (
-		<div className="lg:container lg:px-32 grid grid-cols-1 lg:grid-cols-3 py-20">
+		<div className="lg:container lg:px-32 px-5 grid grid-cols-1 lg:grid-cols-3 py-20 gap-5">
 			{categoryProducts && 
 				categoryProducts.map(product => <ProductCard
 				key={product._id}

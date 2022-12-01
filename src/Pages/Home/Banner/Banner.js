@@ -3,11 +3,10 @@ import hero from "../../../assets/hero.png"
 
 const Banner = () => {
     return (
-        <div className="py-72" style={{
+        <div className="lg:py-72 py-32" style={{
             background:  `url(${hero})`,
             backgroundSize: "cover",
-            backgroundPosition: "center"
-            
+            backgroundPosition: "center",
         }}>
             
         </div>
