@@ -9,18 +9,7 @@ const ProductsCategory = () => {
 			.then((res) => res.json())
 			.then((data) => setCategories(data));
     }, [])
-//    const {data: categories = [], isLoading} = useQuery({
-//         queryKey: ['categories'],
-//         queryFn: async() => {
-//                 const res = await fetch("http://localhost:5000/categories");
-//                 const data = await res.json();
-//                 return data;
-//         }
-//    })
 
-//    if(isLoading) {
-//         return <p>Loading</p>
-//    }
     return (
         <div className="lg:container lg:px-32 px-5">
             <h2 className="text-center text-3xl font-semibold my-5">Products category</h2>
