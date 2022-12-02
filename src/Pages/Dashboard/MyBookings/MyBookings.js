@@ -10,8 +10,7 @@ const MyBookings = () => {
 
     useEffect(() => {
         fetch(
-			`https://resale-products-server-drab.vercel.app/bookings?email=${user?.email}`
-		)
+			`https://resale-products-server-drab.vercel.app/bookings?email=${user?.email}`)
 			.then((res) => res.json())
 			.then((data) => setBookings(data));
     }, [user?.email]);
@@ -19,7 +18,7 @@ const MyBookings = () => {
 
     return (
 		<div>
-			<h2>My Bookings</h2>
+			<h2>My Orders</h2>
 			<div className="grid grid-cols-1 lg:grid-cols-3 gap-5 px-5 py-10">
 				{bookings.map((booking) => (
 					<BookingsCard

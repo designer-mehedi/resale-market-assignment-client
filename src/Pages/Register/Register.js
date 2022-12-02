@@ -19,12 +19,30 @@ const Register = () => {
             }
             toast.success('Registered Successfully');
             updateUser(userInfo)
-            .then(() => {})
+            .then(() => {
+                saveUser(data.name, data.email);
+            })
             .catch(err => console.log(err))
         })
         .catch(err => console.log(err));
-
     }
+
+    const saveUser = (name, email) => {
+        const user = {name, email}
+        fetch("http://localhost:5000/users", {
+            method: "POST",
+            headers: {
+                "content-type" : "application/json"
+            },
+            body: JSON.stringify(user)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        });
+    }
+    
+
     return (
 		<div className="my-24 h-[620px] flex flex-col border w-[30%] m-auto bg-slate-100 rounded-md shadow-lg px-10">
 			<form className="flex flex-col w-full m-auto" onSubmit={handleSubmit(handleRegister)}>
@@ -52,9 +70,8 @@ const Register = () => {
 						<span className="label-text text-lg">Select an account type</span>
 					</label>
 					<select className="border-none py-3" {...register("category", { required: true })}>
-					<option value="" disabled>Select</option>
-					<option value="seller">User</option>
-					<option value="buyer">Seller</option>
+					<option value="user">User</option>
+					<option value="seller">Seller</option>
 				</select>
 				</div>
 				<input className="bg-sky-500 text-white py-3 mt-4 text-lg cursor-pointer" type="submit" value="Sign Up"/>
