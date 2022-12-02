@@ -44,7 +44,7 @@ const Register = () => {
     
 
     return (
-		<div className="my-24 h-[620px] flex flex-col border w-[30%] m-auto bg-slate-100 rounded-md shadow-lg px-10">
+		<div className="lg:my-24 lg:h-[620px] h-[700px] flex flex-col border lg:w-[30%] w-full m-auto bg-slate-100 rounded-md shadow-lg px-10">
 			<form className="flex flex-col w-full m-auto" onSubmit={handleSubmit(handleRegister)}>
                 <h2 className="text-center text-xl font-bold">Sign Up</h2>
                 <div className="form-control w-full">
@@ -57,13 +57,13 @@ const Register = () => {
                     <label className="label">
                         <span className="label-text text-lg">Email</span>
                     </label>
-                    <input className="py-3 px-2" type="email" {...register("email")} placeholder="Your Email" />
+                    <input className="py-3 px-2 border-none" type="email" {...register("email")} placeholder="Your Email" />
                 </div>
                 <div className="form-control w-full">
                     <label className="label">
                         <span className="label-text text-lg">Password</span>
                     </label>
-                    <input className="py-3 px-2" type="password" {...register("password")} placeholder="Your Password" />
+                    <input className="py-3 px-2 border-none" type="password" {...register("password")} placeholder="Your Password" />
                 </div>
 				<div className="form-control w-full">
 					<label className="label">
