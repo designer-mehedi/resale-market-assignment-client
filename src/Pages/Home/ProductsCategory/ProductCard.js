@@ -30,13 +30,16 @@ const ProductCard = ({ product, items, handleShowItem, setItems }) => {
 				image
 			}
 
-			fetch("https://resale-products-server-drab.vercel.app/bookings", {
-				method: "POST",
-				headers: {
-					"content-type": "application/json",
-				},
-				body: JSON.stringify(booking),
-			})
+			fetch(
+				"https://resale-products-server-green.vercel.app/bookings",
+				{
+					method: "POST",
+					headers: {
+						"content-type": "application/json",
+					},
+					body: JSON.stringify(booking),
+				}
+			)
 				.then((res) => res.json())
 				.then((data) => {
 					if (data.acknowledged) {

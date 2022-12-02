@@ -10,7 +10,8 @@ const MyBookings = () => {
 
     useEffect(() => {
         fetch(
-			`https://resale-products-server-drab.vercel.app/bookings?email=${user?.email}`)
+			`https://resale-products-server-green.vercel.app/bookings?email=${user?.email}`
+		)
 			.then((res) => res.json())
 			.then((data) => setBookings(data));
     }, [user?.email]);

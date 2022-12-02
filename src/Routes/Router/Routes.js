@@ -28,7 +28,7 @@ export const router = createBrowserRouter([
 				element: <Products />,
 				loader: ({ params }) =>
 					fetch(
-						`https://resale-products-server-drab.vercel.app/category/${params.id}`
+						`https://resale-products-server-green.vercel.app/category/${params.id}`
 					),
 			},
 		],

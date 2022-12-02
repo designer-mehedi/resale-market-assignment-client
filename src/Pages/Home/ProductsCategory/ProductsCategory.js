@@ -5,7 +5,7 @@ const ProductsCategory = () => {
 
     const [categories, setCategories] = useState([]);
     useEffect(() => {
-        fetch("https://resale-products-server-drab.vercel.app/categories")
+        fetch("https://resale-products-server-green.vercel.app/categories")
 			.then((res) => res.json())
 			.then((data) => setCategories(data));
     }, [])
